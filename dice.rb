@@ -10,7 +10,7 @@ BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
 
 
 get("/") do
-  erb(:elephant, { :layout => :wrapper })
+  erb(:elephant)
 end
 get("/zebra") do
   "We must add a route for each path we want to support"
@@ -52,7 +52,7 @@ get("/dice/1/20") do
 
 	"<h1>1d20</h1>
    <p>#{outcome}</p>"
-	erb(:one_twenty, { :layout => :wrapper })
+	erb(:one_twenty)
 end
 
 get("/dice/5/4") do
@@ -67,5 +67,5 @@ get("/dice/5/4") do
 
 	"<h1>5d4</h1>
    <p>#{outcome}</p>"
-  erb(:five_four, { :layout => :wrapper })
+  erb(:five_four)
 end
