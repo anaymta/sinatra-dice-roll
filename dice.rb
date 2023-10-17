@@ -28,7 +28,7 @@ get("/dice/2/6") do
 
 	"<h1>2d6</h1>
    <p>#{outcome}</p>"
-   erb(:two_six, { :layout => :wrapper })
+   erb(:two_six)
   end
 
 get("/dice/2/10") do
@@ -41,7 +41,7 @@ get("/dice/2/10") do
 
 	"<h1>2d10</h1>
    <p>#{outcome}</p>"
-  erb(:two_ten, { :layout => :wrapper })
+  erb(:two_ten)
 end
 
 get("/dice/1/20") do
