@@ -7,8 +7,10 @@ require "binding_of_caller"
 use(BetterErrors::Middleware)
 BetterErrors.application_root = __dir__
 BetterErrors::Middleware.allow_ip!('0.0.0.0/0.0.0.0')
+
+
 get("/") do
-  erb(:elephant)
+  erb(:elephant, { :layout => :wrapper })
 end
 get("/zebra") do
   "We must add a route for each path we want to support"
@@ -26,8 +28,8 @@ get("/dice/2/6") do
 
 	"<h1>2d6</h1>
    <p>#{outcome}</p>"
-	erb(:two_six)
-end
+   erb(:two_six, { :layout => :wrapper })
+  end
 
 get("/dice/2/10") do
   first_die = rand(1..10)
@@ -39,7 +41,7 @@ get("/dice/2/10") do
 
 	"<h1>2d10</h1>
    <p>#{outcome}</p>"
-  erb(:two_ten)
+  erb(:two_ten, { :layout => :wrapper })
 end
 
 get("/dice/1/20") do
@@ -50,7 +52,7 @@ get("/dice/1/20") do
 
 	"<h1>1d20</h1>
    <p>#{outcome}</p>"
-	erb(:one_twenty)
+	erb(:one_twenty, { :layout => :wrapper })
 end
 
 get("/dice/5/4") do
@@ -65,5 +67,5 @@ get("/dice/5/4") do
 
 	"<h1>5d4</h1>
    <p>#{outcome}</p>"
-  erb(:five_four)
+  erb(:five_four, { :layout => :wrapper })
 end
